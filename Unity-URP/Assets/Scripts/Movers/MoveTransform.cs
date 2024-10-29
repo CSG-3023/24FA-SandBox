@@ -2,13 +2,13 @@
 * COPYRIGHT       : 2024
 * PROJECT         : SandBox
 * FILE NAME       : MoveTransform.cs
-* DESCRIPTION     : Move game object with speed nnd transform.
+* DESCRIPTION     : Move game object with speed and transform.
 *                    
 * REVISION HISTORY:
 * Date 			Author    		        Comments
 * ---------------------------------------------------------------------------
-* 2024/10/28	Akram Taghavi-Burris    Created class
-* 
+* 2024/10/26	Akram Taghavi-Burris    Created class
+* 2024/10/28	    -                   Collision check added
 *
 /******************************************************************/
 
@@ -22,6 +22,7 @@ public class MoveTransform : MonoBehaviour
     private float _speed = 5f;
     [SerializeField]
     private Vector3 _direction = Vector3.right;
+    private bool _canMove = true; 
 
     //Public property to get or set the speed of the object
     public float Speed { get { return _speed; } set { _speed = value; } }
@@ -33,8 +34,26 @@ public class MoveTransform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += _direction * _speed * Time.deltaTime; //default movement
+        if (_canMove)
+        {
+            Move();
+        }
     }//end Update()
+
+    public void Move()
+    {
+        transform.position += _direction * _speed * Time.deltaTime; //default movement
+    }//end Move()
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Check if the other object is Static
+        if (collision.gameObject.isStatic)
+        {
+            _canMove = false;
+        }
+    }//end OnCollisionEnter()
+
 
 
 

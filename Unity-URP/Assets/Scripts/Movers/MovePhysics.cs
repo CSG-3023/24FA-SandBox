@@ -7,7 +7,7 @@
 * REVISION HISTORY:
 * Date 			Author    		        Comments
 * ---------------------------------------------------------------------------
-* 2024/10/28	Akram Taghavi-Burris    Created class
+* 2024/10/26	Akram Taghavi-Burris    Created class
 * 
 *
 /******************************************************************/
@@ -18,7 +18,7 @@ using UnityEngine;
 
 public class MovePhysics : MonoBehaviour
 {
-    private Rigidbody rb; //reference to the object's RigidBody component
+    private Rigidbody _rigidBody; //reference to the object's RigidBody component
 
     [SerializeField]
     private float _speed = 5f;
@@ -34,7 +34,7 @@ public class MovePhysics : MonoBehaviour
     // Awake is called once at instantiation
     void Awake()
     {
-        rb = GetComponent<Rigidbody>(); //get the RigidBody component
+        _rigidBody = GetComponent<Rigidbody>(); //get the RigidBody component
     }//end Awake()
 
 
@@ -55,7 +55,7 @@ public class MovePhysics : MonoBehaviour
         //Note that Time.deltaTime is not needed with velocity because Unity's physics engine is handling movement
 
         Vector3 normalizedDirection = _direction.normalized; // Normalize the direction, to have a magnitude (length) of 1
-        rb.velocity = normalizedDirection * _speed; // Set the velocity based on normalized direction
+        _rigidBody.velocity = normalizedDirection * _speed; // Set the velocity based on normalized direction
     }//end MoveWithVelocity()
 
     ///<summary>
@@ -65,7 +65,7 @@ public class MovePhysics : MonoBehaviour
     void MoveWithForce()
     {
         // Apply force in the direction vector
-        rb.AddForce(_direction * _speed);
+        _rigidBody.AddForce(_direction * _speed);
     }//end MoveWithForce()
 
 
