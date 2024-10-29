@@ -25,6 +25,8 @@ public class MovePhysics : MonoBehaviour
     [SerializeField]
     private Vector3 _direction = Vector3.left;
 
+    public bool CanMove = true;
+
     //Public property to get or set the speed of the object
     public float Speed { get { return _speed; } set { _speed = value; } }
 
@@ -41,8 +43,13 @@ public class MovePhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       MoveWithVelocity();
-      //MoveWithForce();
+        if (CanMove)
+        {
+            MoveWithVelocity();
+            //MoveWithForce();
+
+        }//end if(CanMove)
+
     }//end Update()
 
 

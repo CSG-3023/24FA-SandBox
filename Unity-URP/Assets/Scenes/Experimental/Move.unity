@@ -420,7 +420,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: 1.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 3, z: 1}
+  m_LocalScale: {x: 0.5, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1796204965}
@@ -525,7 +525,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10, y: 1.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 3, z: 1}
+  m_LocalScale: {x: 0.5, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1796204965}
@@ -821,6 +821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _direction: {x: -1, y: 0, z: 0}
+  CanMove: 1
 --- !u!65 &1106574083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1040,6 +1041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _direction: {x: 1, y: 0, z: 0}
+  CanMove: 1
 --- !u!54 &1322308381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1117,6 +1119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _direction: {x: 1, y: 0, z: 0}
+  CanMove: 1
 --- !u!65 &1501160701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1568,7 +1571,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1060098876}
   - {fileID: 1987456166}
   - {fileID: 96322074}
+  - {fileID: 1060098876}
   - {fileID: 1796204965}

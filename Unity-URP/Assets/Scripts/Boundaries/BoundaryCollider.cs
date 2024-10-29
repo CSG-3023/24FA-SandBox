@@ -22,51 +22,55 @@ public class BoundaryCollider : MonoBehaviour
     public BoxCollider Boundary;
 
     private Rigidbody _rigidBody; //reference to the object's RigidBody component
-    private Vector3 _lastPositionInsideBoundary; 
+    private Vector3 _lastPositionInsideBoundary;
+    private MovePhysics _movePhysics;
 
     // Awake is called once at instantiation
     void Awake()
     {
         Boundary.isTrigger = true; //boundary collider must be set to trigger
+        _movePhysics = GetComponent<MovePhysics>();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        CheckBoundary(); 
+    }//end Update()
+
+    //IsInsideBoundary is a boolean check if the object is in the boundary 
+    private bool IsInsideBoundary()
+    {
+        Bounds bounds = Boundary.bounds; //gets the bounds of the box collider 
+        return bounds.Contains(transform.position); //returns if this game object in contained in the bounds
+    }
+
+    //Check if game object is inside or outside the boundary
+    private void CheckBoundary()
     {
         //if the game object is in the boundary, then record the last position
         if (IsInsideBoundary())
         {
             _lastPositionInsideBoundary = transform.position;
         }
-    }//end Update()
-
-    //IsInsideBoundary is a boolean check if the object is in the bounadry 
-    private bool IsInsideBoundary()
-    {
-        Bounds bounds = Boundary.bounds; //gets the bounds of the box collider 
-        return bounds.Contains(transform.position); //returns if this game object in conttained in the bounds
-    }
-
-    //When game object exits the trigger
-    private void OnTriggerExit(Collider other)
-    {
-        //if the trigger is the boundary
-        if(other == Boundary)
+        else
         {
-            Debug.Log("Left Boundary");
+            Debug.Log("Exited Boundary");
+            ReturnToBoundary(); //send it back to the boundary
+        }//end if (IsInsideBoundary())
+    
+    }//end CheckBoundary()
 
-            // Reset the object's position to the last position inside the boundary
-            transform.position = _lastPositionInsideBoundary;
-            
 
-            // Stop any ongoing movement (if using Rigidbody)
-            if (_rigidBody != null)
-            {
-                _rigidBody.velocity = Vector3.zero;
-                _rigidBody.angularVelocity = Vector3.zero;
+    private void ReturnToBoundary()
+    {
+        Debug.Log("Returned to Boundary");
 
-            }//end if(_rigidBody)
-        }
-        
-    }//end OnTriggerExit
+        // Reset the object's position to the last position inside the boundary
+        transform.position = _lastPositionInsideBoundary;
+
+        //Stop object from moving
+        _movePhysics.CanMove = false;
+
+    }//end ReturnToBoundary()
 }

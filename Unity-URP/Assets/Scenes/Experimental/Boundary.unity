@@ -490,6 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _direction: {x: -1, y: 0, z: 0}
+  CanMove: 1
 --- !u!65 &1106574083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1200,7 +1201,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1060098876}
   - {fileID: 1987456166}
   - {fileID: 96322074}
+  - {fileID: 1060098876}
   - {fileID: 1796204965}
