@@ -22,9 +22,10 @@ public class PlayerController : MonoBehaviour
     private float _speed = 5f;
     [SerializeField]
     private Vector3 _direction = Vector3.right;
-    private bool _canMove = true;
 
     private Rigidbody _rigidBody; //reference to the object's RigidBody component
+
+    public bool CanMove = true;
 
     //Public property to get or set the speed of the object
     public float Speed { get { return _speed; } set { _speed = value; } }
@@ -80,10 +81,6 @@ public class PlayerController : MonoBehaviour
         _rigidBody.velocity = _direction * _speed;
 
     }//end MoveWithPhysics()
-
-
-
-
 
 
 

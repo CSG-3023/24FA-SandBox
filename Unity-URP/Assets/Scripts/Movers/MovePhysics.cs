@@ -41,8 +41,8 @@ public class MovePhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //MoveWithVelocity();
-      MoveWithForce();
+       MoveWithVelocity();
+      //MoveWithForce();
     }//end Update()
 
 

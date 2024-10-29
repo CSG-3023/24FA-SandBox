@@ -22,7 +22,8 @@ public class MoveTransform : MonoBehaviour
     private float _speed = 5f;
     [SerializeField]
     private Vector3 _direction = Vector3.right;
-    private bool _canMove = true; 
+
+    public bool CanMove = true; 
 
     //Public property to get or set the speed of the object
     public float Speed { get { return _speed; } set { _speed = value; } }
@@ -34,7 +35,7 @@ public class MoveTransform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_canMove)
+        if (CanMove)
         {
             Move();
         }
@@ -50,7 +51,7 @@ public class MoveTransform : MonoBehaviour
         //Check if the other object is Static
         if (collision.gameObject.isStatic)
         {
-            _canMove = false;
+            CanMove = false;
         }
     }//end OnCollisionEnter()
 
