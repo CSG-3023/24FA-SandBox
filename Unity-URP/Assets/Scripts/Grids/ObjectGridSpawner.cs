@@ -44,7 +44,6 @@ public class ObjectGridSpawner : MonoBehaviour
     void Start()
     {
         _gridPosition = transform.position; //get grid (this) object's position
-        _objArray = TryGetComponent(ObjectArray); 
         GetObjectArray();
         SpawnGrid();
     }//end Start();
@@ -53,9 +52,16 @@ public class ObjectGridSpawner : MonoBehaviour
     //Get the ObjectArray component 
     private void GetObjectArray()
     {
-        if(TryGetComponent)
+        //Try to get ObjectArray component 
+        if(gameObject.TryGetComponent(out ObjectArray component))
+        {   
+            //if component found, assign to reference
+           _objArray = GetComponent<ObjectArray>(); 
+        }
 
-    }
+        return; //return out of method
+
+    }//end GetObjectArray()
 
 
     //Spawn the grid of prefab objects. Grid 
@@ -71,8 +77,10 @@ public class ObjectGridSpawner : MonoBehaviour
                 //Instaniate the prefab instance
                 GameObject _prefabInstance = Instantiate(_prefab, position, Quaternion.identity);
 
-                //Name the instance in the hieracchy based on the prefab name and row_column value
+                //Name the instance in the hierarchy based on the prefab name and row_column value
                 _prefabInstance.name = _prefab.name +"_"+ row.ToString() + "_" + col.ToString();
+
+
 
             }//end for(column)
 

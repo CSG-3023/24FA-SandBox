@@ -2,7 +2,7 @@
 * COPYRIGHT       : 2024
 * PROJECT         : SandBox
 * FILE NAME       : ObjectArray.cs
-* DESCRIPTION     : Places game objects in an array, when instatniated
+* DESCRIPTION     : Places game objects in an array, when instantiated
 *                    
 * REVISION HISTORY:
 * Date 			Author    		        Comments
@@ -38,4 +38,8 @@ public class ObjectArray : MonoBehaviour
     {
         
     }
+
+    public
+
+
 }
