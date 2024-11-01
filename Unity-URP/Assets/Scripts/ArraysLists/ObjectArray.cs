@@ -1,8 +1,8 @@
 /*******************************************************************
-* COPYRIGHT       : Year
-* PROJECT         : Name of Project or Assignment script is used for.
-* FILE NAME       : MakeGrid.cs
-* DESCRIPTION     : Short Description of script.
+* COPYRIGHT       : 2024
+* PROJECT         : SandBox
+* FILE NAME       : ObjectArray.cs
+* DESCRIPTION     : Places game objects in an array, when instatniated
 *                    
 * REVISION HISTORY:
 * Date 			Author    		        Comments
@@ -16,8 +16,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MakeGrid : MonoBehaviour
+public class ObjectArray : MonoBehaviour
 {
+
+
+
     // Awake is called once at instantiation
     void Awake()
     {

@@ -2,7 +2,7 @@
 * COPYRIGHT       : 2024
 * PROJECT         : Sandbox
 * FILE NAME       : Clickable.cs
-* DESCRIPTION     : Object behaviours for being clicked on
+* DESCRIPTION     : Object behaviours for being clicked on; requies rigidbody
 *                    
 * REVISION HISTORY:
 * Date 			Author    		        Comments
@@ -16,6 +16,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Requires a rigidbody on the game object
+[RequireComponent(typeof(Rigidbody))]
 public class Clickable : MonoBehaviour
 {
     public bool clickedOn = false;
@@ -50,7 +52,6 @@ public class Clickable : MonoBehaviour
     protected virtual void OnClicked()
     {
         clickedOn = true;
-        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         Debug.Log("Clicked on Object " + gameObject.name);
     }//end OnClick
 }
