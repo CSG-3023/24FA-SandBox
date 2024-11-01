@@ -47,6 +47,7 @@ public class RotateMouse : MonoBehaviour
     {
         // Rotate the object by the specified angle around its Y-axis
         transform.Rotate(0, _rotationAngle, 0);
+        Debug.Log(transform.eulerAngles.y);
         _clickable.clickedOn = false;
     }//end OnMoudDown()
 }

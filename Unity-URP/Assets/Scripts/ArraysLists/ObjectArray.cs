@@ -39,7 +39,7 @@ public class ObjectArray : MonoBehaviour
         
     }
 
-    public
+    
 
 
 }
