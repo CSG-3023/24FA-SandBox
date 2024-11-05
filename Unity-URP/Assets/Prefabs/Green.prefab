@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7471706210000001691}
   - component: {fileID: 8314705548117326019}
   - component: {fileID: 7996375750801801126}
+  - component: {fileID: 2243522853994116723}
   m_Layer: 0
   m_Name: Green
   m_TagString: Untagged
@@ -122,3 +123,19 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &2243522853994116723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906358183879553328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3382f2c35f4b37429eb260c491ea3b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMaterial: {fileID: 2100000, guid: 181e1c12123b46145a8f6ea52339ac20, type: 2}
+  lightUpColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  lightUpDuration: 0.5
+  isLightingUp: 0
