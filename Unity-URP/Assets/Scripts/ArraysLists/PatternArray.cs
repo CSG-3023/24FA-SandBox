@@ -1,17 +1,16 @@
 /*******************************************************************
-* COPYRIGHT       : Year
-* PROJECT         : Name of Project or Assignment script is used for.
+* COPYRIGHT       : 2024
+* PROJECT         : SandBox
 * FILE NAME       : PatternArray.cs
-* DESCRIPTION     : Short Description of script.
+* DESCRIPTION     : Creates a pattern array, but placing random objects from each row into an array
 *                    
 * REVISION HISTORY:
 * Date 			Author    		        Comments
 * ---------------------------------------------------------------------------
-* 2000/01/01		Developer's Name    		 Created <short comment of changes>
+*  2024/11/03   Akram Taghavi-Burris    class created
 * 
 *
 /******************************************************************/
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
