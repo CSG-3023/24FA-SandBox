@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91690765924642716}
   - component: {fileID: 7219221493460628307}
-  - component: {fileID: 1436903839001915021}
+  - component: {fileID: 4978067674685309703}
   m_Layer: 7
   m_Name: Gun
   m_TagString: Gun
@@ -220,7 +220,7 @@ MonoBehaviour:
   rotationSpeed: 5
   maxTiltAngle: 5
   minTiltAngle: -5
---- !u!114 &1436903839001915021
+--- !u!114 &4978067674685309703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,11 +229,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4852431235161452303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ad3a769c90e6042946856a6406c7b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 61e798f9b2b1e2b4f95fc2567c95a888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShootingForce: 100
-  _projectilePrefab: {fileID: 5782328063933353406, guid: 80e58ecf5a048e14b80cb84dd7991eac,
+  _projectilePrefab: {fileID: 5782328063933353406, guid: 2d39a54459ab30142b30e6a2e7676e66,
     type: 3}
   _spawnPoint: {fileID: 6330689266412945106}
-  _targetDistance: 10
+  _speed: 50
+  _direction: {x: 0, y: 0, z: 0}
+  _canShoot: 1
+  _cooldown: 0
