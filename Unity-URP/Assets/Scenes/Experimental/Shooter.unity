@@ -391,12 +391,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &438124804 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6330689266412945106, guid: 832c21c10b8598b46b6cdefd2afce83e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6648194495979845704}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &499444299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -660,12 +654,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &1726796324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4852431235161452303, guid: 832c21c10b8598b46b6cdefd2afce83e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6648194495979845704}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1796204963
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,25 +874,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4613277439989963999, guid: 832c21c10b8598b46b6cdefd2afce83e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4852431235161452303, guid: 832c21c10b8598b46b6cdefd2afce83e,
         type: 3}
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1436903839001915021, guid: 832c21c10b8598b46b6cdefd2afce83e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4852431235161452303, guid: 832c21c10b8598b46b6cdefd2afce83e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6703293514929330133}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832c21c10b8598b46b6cdefd2afce83e, type: 3}
 --- !u!4 &6703293514929330132 stripped
 Transform:
@@ -912,25 +890,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6648194495979845704}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6703293514929330133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726796324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e798f9b2b1e2b4f95fc2567c95a888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 5782328063933353406, guid: 2d39a54459ab30142b30e6a2e7676e66,
-    type: 3}
-  _spawnPoint: {fileID: 438124804}
-  _speed: 100
-  _direction: {x: 0, y: 0, z: 1}
-  _canShoot: 1
-  _cooldown: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
