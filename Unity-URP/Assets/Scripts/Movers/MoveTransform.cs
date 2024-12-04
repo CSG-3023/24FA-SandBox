@@ -15,6 +15,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MoveTransform : MonoBehaviour
 {
@@ -41,10 +42,23 @@ public class MoveTransform : MonoBehaviour
         }
     }//end Update()
 
-    public void Move()
+
+    ///<summary>
+    /// Move the object by the transform position
+    /// </summary>
+    /// <param name="direction">The direction in which the projectile should move. If null, the default direction is used.</param>
+    /// <param name="speed">The magnitude of the force to be applied. If null, the default speed is used.</param>
+    public void Move(Vector3? direction = null, float? speed = null)
     {
-        transform.position += _direction * _speed * Time.deltaTime; //default movement
+      // Use the provided direction and speed, or fall back to instance variables
+      Vector3 moveDirection = direction ?? _direction;
+      float moveSpeed = speed ?? _speed;
+
+      transform.position += moveDirection * moveSpeed * Time.deltaTime; //default movement
+
     }//end Move()
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
