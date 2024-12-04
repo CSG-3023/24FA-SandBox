@@ -886,6 +886,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4613277439989963999, guid: 832c21c10b8598b46b6cdefd2afce83e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4852431235161452303, guid: 832c21c10b8598b46b6cdefd2afce83e,
         type: 3}
       propertyPath: m_Name
@@ -922,6 +927,8 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 5782328063933353406, guid: 2d39a54459ab30142b30e6a2e7676e66,
     type: 3}
   _spawnPoint: {fileID: 438124804}
+  _speed: 100
+  _direction: {x: 0, y: 0, z: 1}
   _canShoot: 1
   _cooldown: 0
 --- !u!1660057539 &9223372036854775807

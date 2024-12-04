@@ -28,6 +28,14 @@ public class ProjectileSpawner : MonoBehaviour
     private Transform _spawnPoint;
 
     [SerializeField]
+    [Tooltip("Speed (or force) of projectile movement")]
+    private float _speed = 50f;
+
+    [SerializeField]
+    [Tooltip("Direction to move the projectile")]
+    private Vector3 _direction;
+
+    [SerializeField]
     [Tooltip("Boolean for testing if can shoot")]
     private bool _canShoot = true;
 
@@ -35,9 +43,7 @@ public class ProjectileSpawner : MonoBehaviour
     [Tooltip("Cooldown time before next shot")]
     private float _cooldown = 0f;
 
-    [SerializeField]
-    [Tooltip("Projectile mover to determine the movement behavior")]
-    private ProjectileMover _projectileMover;
+
 
     // Tracks the remaining cooldown time
     private float _cooldownTimer = 0f;   
@@ -48,14 +54,24 @@ public class ProjectileSpawner : MonoBehaviour
     //Instance of the projectile
     private GameObject _projectile;
 
+
     // Update is called once per frame
     void Update()
     {
+
+        //Set the direction to the direction you are facing 
+        _direction = transform.forward;
+
         //When mouse is clicked and _canshoot true
         if (Input.GetMouseButtonDown(0) && _canShoot)
         {
             _projectile = InstanaiateProjectile();
-            SetCooldownTimer(); //sets the cooldown timer
+
+            ShootProjectile(); 
+
+            //sets the cooldown timer
+            SetCooldownTimer(); 
+            
         }
 
         // Continuously check if cooldown needs to be updated
@@ -114,6 +130,25 @@ public class ProjectileSpawner : MonoBehaviour
 
         }//end if (!_canShoot) 
     }//end HandelCooldown
+
+
+
+    //Shoot projectile using the move component on the projectile 
+    private void ShootProjectile()
+    {
+        //Get reference to the MovePhysics component on the projectile prefab
+        MovePhysics moveProjectile = _projectile.GetComponent<MovePhysics>();
+
+
+        //Set the CanMove to false to prevent it from moving on it's own 
+        moveProjectile.CanMove = false;
+
+        //Move the projectile with the desired direction and speed
+        moveProjectile.Move(_direction, _speed);
+
+
+    }//end ShootProjectile()
+
 
 
 }

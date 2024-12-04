@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _speed = 5f;
     [SerializeField]
-    private Vector3 _direction = Vector3.right;
+    private Vector3 _direction = Vector3.forward;
 
     private Rigidbody _rigidBody; //reference to the object's RigidBody component
 
