@@ -19,12 +19,16 @@ using UnityEngine.EventSystems;
 
 public class MoveTransform : MonoBehaviour
 {
+       [Tooltip("The magnitude of the force to be applied")]
     [SerializeField]
     private float _speed = 5f;
+
+    [Tooltip("The direction in which the object should move")]
     [SerializeField]
     private Vector3 _direction = Vector3.right;
 
-    public bool CanMove = true; 
+    [Tooltip("If true, the object will automatically move by default")]
+    public bool CanMove = true;
 
     //Public property to get or set the speed of the object
     public float Speed { get { return _speed; } set { _speed = value; } }
@@ -46,18 +50,17 @@ public class MoveTransform : MonoBehaviour
     ///<summary>
     /// Move the object by the transform position
     /// </summary>
-    /// <param name="direction">The direction in which the projectile should move. If null, the default direction is used.</param>
+    /// <param name="direction">The direction in which the object should move. If null, the default direction is used.</param>
     /// <param name="speed">The magnitude of the force to be applied. If null, the default speed is used.</param>
     public void Move(Vector3? direction = null, float? speed = null)
     {
-      // Use the provided direction and speed, or fall back to instance variables
-      Vector3 moveDirection = direction ?? _direction;
-      float moveSpeed = speed ?? _speed;
+        // Use the provided direction and speed, or fall back to instance variables
+        Vector3 moveDirection = direction ?? _direction;
+        float moveSpeed = speed ?? _speed;
 
-      transform.position += moveDirection * moveSpeed * Time.deltaTime; //default movement
+        transform.position += moveDirection * moveSpeed * Time.deltaTime; //default movement
 
     }//end Move()
-
 
 
     private void OnCollisionEnter(Collision collision)
@@ -68,10 +71,5 @@ public class MoveTransform : MonoBehaviour
             CanMove = false;
         }
     }//end OnCollisionEnter()
-
-
-
-
-
 
 }
